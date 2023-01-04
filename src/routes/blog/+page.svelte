@@ -10,7 +10,7 @@
 	let scrollY: number;
 </script>
 
-<Metadata title="Dongle • Blog" />
+<Metadata title="Pdawg • Blog" />
 
 <svelte:window
 	on:scroll={() =>

@@ -5,7 +5,6 @@
 	export { className as class };
 </script>
 
-<!-- go complain to https://github.com/sveltejs/svelte/pull/5481 -->
 {#if type === "header"}
 	<header {...$$restProps} class="page-section{' ' + className || ''}">
 		<slot name="outer" />
