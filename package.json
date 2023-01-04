@@ -1,0 +1,35 @@
+{
+	"name": "pdawg-website",
+	"version": "0.0.1",
+	"repository": "https://github.com/dongle-the-gadget/dongle-website",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "svelte-kit preview",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	"devDependencies": {
+		"@fec/remark-a11y-emoji": "^3.1.0",
+		"@fluentui/svg-icons": "^1.1.190",
+		"@sveltejs/adapter-vercel": "1.0.0",
+		"@sveltejs/kit": "1.0.1",
+		"autoprefixer": "^10.4.13",
+		"cssnano": "^5.1.14",
+		"fluent-svelte": "^1.6.0",
+		"mdsvex": "^0.10.6",
+		"postcss": "^8.4.20",
+		"postcss-media-minmax": "^5.0.0",
+		"remark-gfm": "^3.0.1",
+		"remark-github": "^11.2.4",
+		"remark-slug": "^7.0.1",
+		"sass": "^1.57.1",
+		"svelte": "^3.55.0",
+		"svelte-check": "^2.10.3",
+		"svelte-preprocess": "^4.10.7",
+		"tslib": "^2.4.1",
+		"typescript": "^4.9.4",
+		"vite": "^4.0.4"
+	},
+	"type": "module"
+}
