@@ -13,11 +13,12 @@
       width: 300px;
       height: 300px;
       background: rgba(70, 70, 70, 0.4);
-      background-position: center;
+      background-position: random($limit: 100);
       position:relative;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
       cursor: pointer;
+      background-image: url('/portfolio-assets/win11-glow-bloom.png');
       transition: all 0.2s ease-in-out;
   
       .name {
@@ -46,6 +47,7 @@
     {
       content: '';
       position: absolute;
+      background-position: inherit;
       top: 0;
       left: 0;
       right: 0;
@@ -53,7 +55,7 @@
       width: 101%;
       height: 101%;
       background-image: inherit;
-      filter: blur(2px);
+      filter: blur(1px);
       border-radius: 8px;
       z-index: 0;
     }
