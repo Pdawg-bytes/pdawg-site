@@ -34,6 +34,11 @@
       description: "Windows Phone 7 Center is an all-in-one app that has as much info as I can find that would be important to a WP7 device owner.",
       url: "https://github.com/Pdawg-bytes/wp7-center"
     },
+    {
+      name:"Darkwash VS Theme",
+      description: "This is the Darkwash Theme for Visual Studio 2022. It brings in a clean dark mode to rest your eyes, along with shades of purple that fit quite nicely together. Give it a try!",
+      url: "https://github.com/Pdawg-bytes/darkwash-vs2022-theme"
+    },
   ];
 </script>
 
