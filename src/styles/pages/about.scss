@@ -7,6 +7,29 @@
 
 .body
 {
+    margin-top: 8px;
     margin-left: 16px;
     margin-right: 16px;
+    border-radius: 8px;
+}
+
+.body-container
+{
+    background: rgba(70, 70, 70, 0.4);
+    border-radius: 8px; 
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
+
+.textBody
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.extra
+{
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 20px;
 }
