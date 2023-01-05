@@ -14,6 +14,26 @@
         description: 'A shell for Windows 11 (and maybe 10) that aims to create a much nicer and more functional taskbar. Fully written in C# and WASDK.',
         url: 'https://github.com/Pdawg-bytes/GyroShell'
     },
+    {
+      name: "Band Webtile Generator",
+      description: "This is a UWP app that replaces the old website to make a Microsoft Band Web Tile.",
+      url: "https://github.com/Pdawg-bytes/band-webtile-generator"
+    },
+    {
+      name: "WinUI 3 Tasklist",
+      description: "A Task List app written fully in WinUI 3 C# .NET. This is my first WinUI 3 app.",
+      url: "https://github.com/Pdawg-bytes/WinUI3-TaskList"
+    },
+    {
+      name: "Bad Apple UWP",
+      description: "This is my implementation of Bad Apple, all on XAML and C#. This works by taking each frame, and then applying it as a background of a control, then updating it to achieve 15fps!",
+      url: "https://github.com/Pdawg-bytes/bad-apple-uwp"
+    },
+    {
+      name:"WP7-Center",
+      description: "Windows Phone 7 Center is an all-in-one app that has as much info as I can find that would be important to a WP7 device owner.",
+      url: "https://github.com/Pdawg-bytes/wp7-center"
+    },
   ];
 </script>
 
@@ -32,6 +52,10 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        margin: auto;
+        margin-top: 70px;
+        margin-bottom: 70px;
+        margin-left: 20px;
+        margin-right: 20px;
+        vertical-align: middle;
     }
   </style>
