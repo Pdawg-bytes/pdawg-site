@@ -45,6 +45,11 @@
       url: "https://github.com/Pdawg-bytes/Metro-UI-Demo-WinForms",
     },
     {
+      name: "R11 Installer Builder",
+      description: 'A simple program that runs every time a timer hits, pulls latest rectify 11 installer source, then builds it.',
+      url: 'https://github.com/Pdawg-bytes/r11-installer-build.auto',
+    },
+    {
       name:"Pdawg's Site",
       description: "The website you're reading this on right now!",
       url: "https://github.com/Pdawg-bytes/pdawg-site"
