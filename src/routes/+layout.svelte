@@ -16,7 +16,7 @@
 	const navbarItems: NavbarItem[] = [
 		{
 			name: "Home",
-			path: "/",
+			path: '/',
 			icon: Home
 		},
 		{
