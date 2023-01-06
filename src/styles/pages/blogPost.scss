@@ -17,6 +17,23 @@
 	}
 }
 
+.separate
+{
+	height:3px;	
+	opacity: calc(0.3);
+	background-color: darkgray;
+	border-radius: 2px;
+}
+
+.comment-section
+{
+	margin-top: 20px;
+}
+.commentBox
+{
+	margin-top: 10px;
+}
+
 :global(.back-button) {
 	color: var(--fds-text-tertiary);
 }

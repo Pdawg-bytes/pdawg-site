@@ -2,13 +2,14 @@
 	import { externalLink, Metadata } from "$lib";
 	import Share from "@fluentui/svg-icons/icons/share_24_regular.svg?raw";
 	import ArrowLeft from "@fluentui/svg-icons/icons/arrow_left_24_regular.svg?raw";
-	import { IconButton, MenuFlyout, MenuFlyoutItem } from "fluent-svelte";
+	import { IconButton, MenuFlyout, MenuFlyoutItem, TextBlock, TextBox, TextBoxButton } from "fluent-svelte";
 	import type { LayoutData } from "./$types";
 	import { page } from "$app/stores";
 
 	export let data: LayoutData;
 
 	$: ({ title, thumbnail, author, date, description, host, protocol } = data);
+	let commentValue = "";
 </script>
 
 <Metadata title="Pdawg • {title}" heroImage={thumbnail} description={description} imageHost={host} imageProtocol={protocol} />
@@ -71,6 +72,24 @@
 		<div class="markdown-body">
 			<slot />
 		</div>
+		<!--<hr class="separate"/>
+		<div class="comment-section">
+			<TextBlock variant="title">Comments</TextBlock>
+			<div class="commentBox">
+				<TextBox bind:value={commentValue} placeholder="Send a comment..." style="height: 30px;">
+					<TextBoxButton slot="buttons" on:click={() => alert("Why won't this work")}>
+						<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd" 
+								d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"
+								fill="currentColor"
+							/>
+						</svg>
+					</TextBoxButton>
+				</TextBox>
+				<p>Current value: {commentValue}</p>
+			</div>
+		</div>-->
 	</article>
 </section>
 
