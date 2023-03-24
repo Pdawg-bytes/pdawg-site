@@ -27,6 +27,7 @@
             <svelte:fragment slot="content">
                 <TextBlock variant="bodyStrong">Pdawg's site</TextBlock>
                 <TextBlock>Built on SvelteKit and SCSS</TextBlock>
+                <br/>
                 <TextBlock>Styling: <a href="https://github.com/Tropix126/fluent-svelte">Fluent Svelte</a></TextBlock>
             </svelte:fragment>
         </Expander>
