@@ -27,6 +27,7 @@
         text-align: center;
         margin: 16px 0;
         z-index: 1;
+        color: white;
       }
   
       &:hover{
@@ -40,6 +41,7 @@
         text-align: center;
         margin: 16px;
         z-index: 1;
+        color: white;
       }
     }
     

@@ -16,7 +16,7 @@
 .body-container
 {
     border-radius: var(--fds-overlay-corner-radius);
-    background-color: var(--fds-layer-background-default);
+    background: var(--fds-layer-background-default);
     border: var(--fds-control-border-default);
     box-shadow: var(--fds-card-shadow);
     margin-left: 16px;

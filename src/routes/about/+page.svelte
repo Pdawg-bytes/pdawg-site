@@ -26,8 +26,8 @@
             About this website
             <svelte:fragment slot="content">
                 <TextBlock variant="bodyStrong">Pdawg's site</TextBlock>
-                <p class="textBody">Built on SvelteKit and SCSS</p>
-                <p class="textBody">Styling: <a href="https://github.com/Tropix126/fluent-svelte">Fluent Svelte</a></p>
+                <TextBlock>Built on SvelteKit and SCSS</TextBlock>
+                <TextBlock>Styling: <a href="https://github.com/Tropix126/fluent-svelte">Fluent Svelte</a></TextBlock>
             </svelte:fragment>
         </Expander>
     </div>
