@@ -15,8 +15,10 @@
 
 .body-container
 {
-    background: rgba(70, 70, 70, 0.4);
-    border-radius: 8px; 
+    border-radius: var(--fds-overlay-corner-radius);
+    background-color: var(--fds-layer-background-default);
+    border: var(--fds-control-border-default);
+    box-shadow: var(--fds-card-shadow);
     margin-left: 16px;
     margin-right: 16px;
     margin-bottom: 16px;

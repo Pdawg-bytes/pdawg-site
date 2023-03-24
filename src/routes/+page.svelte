@@ -20,7 +20,7 @@
 		<div class="hero-contents">
 			<TextBlock variant="titleLarge">Pdawg</TextBlock>
 			<TextBlock
-				> He/Him, 13 year old .NET developer, knows a little bit of webdev and C++, but mainly C#. View my Portfolio to look at my projects!</TextBlock
+				>13 year old .NET developer, knows a little bit of webdev and C++, but mainly C#. View my Portfolio to look at my projects!</TextBlock
 			>
 			<br>
 			<TextBlock
