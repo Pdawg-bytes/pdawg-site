@@ -12,7 +12,7 @@
 <div class="body-container">
     <div class="body">
         <TextBlock variant="bodyStrong">Seems like you want to know more about me. I'm flattered.</TextBlock>
-        <p class="textBody">So, here's some more about me. Like I said on the home page, I am a 13 year old software developer, and I hope to work at Microsoft someday. I have been into computers since the age of 6, and it hasn't stopped since then.</p>
+        <p class="textBody">So, here's some more about me. Like I said on the home page, I am a 14 year old software developer, and I hope to work at Microsoft someday. I have been into computers since the age of 6, and it hasn't stopped since then.</p>
         <TextBlock variant="bodyStrong">What lit the spark?</TextBlock>
         <p class="textBody">Let's talk about what started my software development journey. On March 20th, 2022, I published my first "app" to GitHub. It was a Windows Forms app that demonstrated the Metro UI framework for Windows Forms. The app included various Metro UI elements, such as buttons, checkboxes, and text. Although it was a useful learning experience, I eventually realized that WinForms was no longer a viable option for app development due to its outdated and slow nature. As a result, I moved on to creating WinUI3-Tasklist, a simple task list app in WinUI 3. At the time (August 2022), my knowledge of C# and XAML was limited, so the code for the app was basic. Despite this, I was proud of my MainPage.xaml.cs file, which was only 60 lines long.</p>
         <TextBlock variant="bodyStrong">Let's get up to speed.</TextBlock>
