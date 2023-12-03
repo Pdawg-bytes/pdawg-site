@@ -1,7 +1,7 @@
 export const links = {
 	twitter: "pdawg11239",
 	github: "Pdawg-bytes",
-	discord: "Pdawg#2535"
+	discord: "pdawg0"
 };
 
 export type NavbarItem = {
