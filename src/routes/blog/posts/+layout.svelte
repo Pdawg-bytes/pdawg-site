@@ -57,13 +57,6 @@
 				</svelte:fragment>
 
 			</MenuFlyout>
-			<IconButton size={20} aria-label="Like" title="Like" id="like-button">
-				{@html Like}
-			</IconButton>
-
-			<IconButton size={20} aria-label="Dislike" title="Dislike" id="dislike-button">
-				{@html Dislike}
-			</IconButton>
 		</div>
 		{#if thumbnail}
 			<img class="post-thumbnail" src={thumbnail} alt="Thumbnail" />
