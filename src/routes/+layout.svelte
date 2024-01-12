@@ -3,6 +3,7 @@
 	import { page } from "$app/stores";
 	import { onMount } from "svelte";
 	import { inject } from '@vercel/analytics';
+	import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit"
 
 	import { Navbar } from "$layout";
 	import type { NavbarItem } from "$data/links";
@@ -15,6 +16,7 @@
 	import Information from "@fluentui/svg-icons/icons/info_24_regular.svg?raw";
 
 	inject({ mode: dev ? 'development' : 'production' });
+	injectSpeedInsights();
 
 	const navbarItems: NavbarItem[] = [
 		{
