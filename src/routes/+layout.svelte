@@ -2,6 +2,7 @@
 	import { dev } from "$app/environment";
 	import { page } from "$app/stores";
 	import { onMount } from "svelte";
+	import { inject } from '@vercel/analytics';
 
 	import { Navbar } from "$layout";
 	import type { NavbarItem } from "$data/links";
@@ -12,6 +13,8 @@
 	import News from "@fluentui/svg-icons/icons/news_24_regular.svg?raw";
 	import Portfolio from "@fluentui/svg-icons/icons/book_24_regular.svg?raw";
 	import Information from "@fluentui/svg-icons/icons/info_24_regular.svg?raw";
+
+	inject({ mode: dev ? 'development' : 'production' });
 
 	const navbarItems: NavbarItem[] = [
 		{
