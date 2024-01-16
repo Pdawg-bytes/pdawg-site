@@ -16,6 +16,12 @@ By the end of October, I had finally ordered the Band 2, which would never see t
 About 10 days later, I started working on the PCB design. My original plan was to use a custom PCB to break out the pins of the chip to some 2.54mm pin headers, so that I didn't have to do any microsoldering. I put a *lot* of time into the PCB design, because I'd never used PCB design software before this. After working on it, the PCB was ready to be sent off to PCBWay for manufacturing on November 10th. Unfortunately, when they arrived, I quickly realized that I'd sent PCBWay an earlier revision of the board. I used this as an opportunity to make a few more revisions to the board, suggested by some friends. 
 
 Finally, a whole month later, the 2nd batch of boards arrived. I assembled one of them a few hours later—just to go on another break.
+<figure class="margin-bottom">
+    <img style="height: 250px;" src="/blog-resources/msbandflash/pcb_rev1.png" alt="PCB Revision 1.0">
+    <img style="height: 250px;" src="/blog-resources/msbandflash/pcb_rev2.png" alt="PCB Revision 2.0">
+    <img style="height: 250px;" src="/blog-resources/msbandflash/pcb_rev3.png" alt="PCB Revision 3.0">
+    <figcaption>Custom PCB Revisions 1, 2, and 3, respectively</figcaption>
+</figure>
 
 ## Chapter 4 - A problem arises
 About a week later, I got my board out, as well as the BGA stencil that I ordered with it. Little did I know, none of this would be useful. I melted the solder around the flash chip with a heat gun, pulling it off the board, expecting a tiny 5 by 5 array of pads; only to be met with a set of 8 pins and a massive grounding pad in the middle. It wasn't BGA, it was WSON-8. I should've known, and it was my fault that I didn't. I made the PCBs before I had the tools to remove the chip, so we all assumed it was BGA. But I had to keep going, I was getting close.
@@ -24,14 +30,18 @@ So, I went back into KiCad, recreated the chip footprint, symbol, and board sche
 
 ## Chapter 5 - A new beginning
 With a new direction in mind, I prepared to solder wires to pads that were only fractions of a millimeter thick. I stripped a USB cable for its thin wires, took note of the colors, and soldered them to the correct pads on the chip. Some how, I was successful on my first attempt. The connections were solid. With the chip ready to go, I quickly assembled a logic level shifter, and then wired everything up on a breadboard.
+<figure class="margin-bottom">
+    <img src="/blog-resources/msbandflash/chip_soldering.jpg" alt="The flash chip with wires soldered to it.">
+    <figcaption>The connections made to the flash chip</figcaption>
+</figure>
 
 ## Chapter 6 - The wrong tool for the job
-All along, I planned to use an Arduino to control the chip. The Arduino's GPIO would be wired up to a level shifter, which would then connect it to the chip with the correct voltage. Once I wired the whole thing together, a friend pointed out that the level shifter was upside down. VCC_A (low) was on the high side, and vice-versa. But, at this point, I'd already tried to interact with the chip, which obviously yielded no results. Given my mistakes, I thought that the chip was dead. I fixed the circuit anyway, and had more of the same—nothing. But, just as I was about to give up, I remembered that I had a Raspberry Pi.
+All along, I planned to use an Arduino to control the chip. The Arduino's GPIO would be wired up to a level shifter, which would then connect it to the chip with the correct voltage. Once I wired the whole thing together, a friend pointed out that the level shifter was upside down. `VCC_A` (low) was on the high side, and vice-versa. But, at this point, I'd already tried to interact with the chip, which obviously yielded no results. Given my mistakes, I thought that the chip was dead. I fixed the circuit anyway, and had more of the same—nothing. But, just as I was about to give up, I remembered that I had a Raspberry Pi.
 
 ## Chapter 7 - She lives!
 I quickly disassembled the circuit, even as far as removing the wires from the chip. I wanted to have one last fresh go at this thing. So, I did some research about the RPi's GPIO, figured out which pins go where, and rebuilt the breadboard; including resoldering the wires to the chip. This was my last chance. I cloned and compiled a tool called [flashrom](https://github.com/flashrom), which allowed me to dump the chip. 
 
-I ran the tool, only to find "No EEPROM/flash device found" printed in the console. I took a quick look at the wiring, and noticed a wire on my desk, not plugged into anything. I quickly realized that the wire was supposed to connect VCC_A to OE, pulling it high, allowing the `TXS0108E` level shifter to output signals. After connecting OE to VCC_A, I ran the command once more, to be met with "Found Macronix flash chip "MX25U51245G" (65536kB, SPI)" printed to the console. I could not believe my eyes. The chip was alive. 
+I ran the tool, only to find "No EEPROM/flash device found" printed in the console. I took a quick look at the wiring, and noticed a wire on my desk, not plugged into anything. I quickly realized that the wire was supposed to connect `VCC_A` to `OE`, pulling it high, allowing the `TXS0108E` level shifter to transfer signals. After connecting `OE` to `VCC_A`, I ran the command once more, to be met with "Found Macronix flash chip "MX25U51245G" (65536kB, SPI)" printed to the console. I could not believe my eyes. The chip was alive. 
 
 ## Chapter 8 - Endgame
 However, the model that the program gave was wrong. I was using an `MX66U51235F`. I assumed that the program didn't support my exact flash chip, so it found one of similar spec. Regardless of the mismatch, I proceeded to pass the read command. It started reading...and it never stopped. It was stuck. Sure enough, the flash chip that the program was substituting for was a 4-byte-only chip. This meant that the program was trying to use the standard `0x03` read command, but was attempting to pass in 4 bytes of address data, which my chip simply didn't support. To read from 4-byte addresses on my chip, you need to use `0x13`. With this in mind, I searched the source code for anything starting with `MX66`, and sure enough, it supported the `MX66L51235F`, my chips' close cousin. These two chips are almost the exact same, besides a few differences, with the biggest being the voltage that the chip ran at. My chip ran at 1.8V, while the MX66L ran at 3V. However, since the chip uses SPI, it doesn't matter what voltage the chip runs at. 0s and 1s are still 0s and 1s.
@@ -91,3 +101,5 @@ https://elinux.org/RPi_SPI
 https://flashrom.org/classic_cli_manpage.html
 https://www.raspberrypi-spy.co.uk/2018/09/using-a-level-shifter-with-the-raspberry-pi-gpio/
 https://tomvanveen.eu/flashing-bios-chip-raspberry-pi/
+
+### Last edited 01/15/2024
